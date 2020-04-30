@@ -2,12 +2,30 @@ package com.revature.models;
 
 import java.sql.Date;
 
-public class Futureworkouts {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+
+@Table( name = "futureworkouts")
+public class Futureworkouts {
+	
+	@Id
+	@Column
 	int userID;
+	
+	@Column
 	String exercise;
+	
+	@Column
 	int reps;
+	
+	@Column
 	Date futuredate;
+	
+	
 	public Futureworkouts() {
 		super();
 		// TODO Auto-generated constructor stub
