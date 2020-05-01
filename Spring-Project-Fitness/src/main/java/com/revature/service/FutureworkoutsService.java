@@ -23,6 +23,6 @@ public class FutureworkoutsService {
 	}
 	
 	public List<Futureworkouts> getFutureworkoutsById(int id){
-		return this.futworkoutsRepository.findAllById(id);
+		return this.futworkoutsRepository.getFutureworkoutsById(id);
 	}
 }

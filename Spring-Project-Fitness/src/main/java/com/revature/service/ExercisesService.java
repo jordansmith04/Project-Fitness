@@ -23,6 +23,6 @@ public class ExercisesService {
 		}
 		
 		public List<Exercises> getExercisesById(int id){
-			return this.exerRepository.findAllById(id);
+			return this.exerRepository.getExercisesById(id);
 		}
 }
