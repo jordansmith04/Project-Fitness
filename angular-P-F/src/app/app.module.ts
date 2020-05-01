@@ -6,6 +6,7 @@ import { AppRoutingModule, routingComponents} from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 
 
@@ -19,10 +20,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
