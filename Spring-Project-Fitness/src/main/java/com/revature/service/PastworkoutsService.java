@@ -6,15 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.models.Pastworkouts;
-import com.revature.repository.PastworkoutRepo;
+import com.revature.repository.PastworkoutsRepo;
 
-public class PastworkoutsService {
 
-	@Service("PastworkoutService")
-	public class PastworkoutService {
+	@Service("PastworkoutsService")
+	public class PastworkoutsService {
 
 		@Autowired //Wire your polkamanRepository bean in using this annotation!
-		private PastworkoutRepo pastworkoutsRepository;
+		private PastworkoutsRepo pastworkoutsRepository;
 		
 		public List<Pastworkouts> getAllPastworkouts(){
 			return this.pastworkoutsRepository.findAll();

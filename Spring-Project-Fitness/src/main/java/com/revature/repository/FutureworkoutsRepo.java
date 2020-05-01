@@ -2,25 +2,18 @@ package com.revature.repository;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.revature.models.Futureworkouts;
 
-public class FutureworkoutsRepo {
+@Repository("FutureworkoutsRepo")
+public interface FutureworkoutsRepo extends JpaRepository<Futureworkouts, Integer>{
 
 	
-	@Autowired //Wire your polkamanRepository bean in using this annotation!
-	private FutureworkoutsRepo futureworkoutsRepository;
+	public List<Futureworkouts> getAllPastworkouts();
 	
-	public List<Futureworkouts> getAllPastworkouts(){
-		return this.futureworkoutsRepository.findAll();
-	}
+	public void insertFutureworkout(Futureworkouts p);
 	
-	public void insertPastworkout(Futureworkouts p) {
-		this.futureworkoutsRepository.save(p);
-	}
-	
-	public List<Futureworkouts> getPastworkoutsById(int id){
-		return this.futureworkoutsRepository.findAllById(id);
-	}
+	public List<Futureworkouts> getFutureworkoutsById(int id);
 }

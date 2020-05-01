@@ -10,14 +10,11 @@ import com.revature.models.Pastworkouts;
 import com.revature.models.Workouts;
 
 
-public class PastworkoutRepo {
-
 	
 	@Repository("PastworkoutsRepository") //Don't forget to add your bean to the IOC container!
-	public interface PolkamanRepository extends JpaRepository<Pastworkouts, Integer>{
+	public interface PastworkoutsRepo extends JpaRepository<Pastworkouts, Integer>{
 
 		List<Pastworkouts> findAll();
 		<S extends Pastworkouts> S save(Workouts p);
-		Pastworkouts findAllById(int userID);
-}
+		List<Pastworkouts> findAllById(int userID);
 };
