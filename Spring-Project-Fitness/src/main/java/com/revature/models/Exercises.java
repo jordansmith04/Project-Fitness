@@ -24,6 +24,8 @@ public class Exercises {
 	@Column
 	String exercise;
 	
+	@Column
+	int calories;
 	
 	public Exercises() {
 		super();
