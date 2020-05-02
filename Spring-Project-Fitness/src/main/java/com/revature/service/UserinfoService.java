@@ -1,19 +1,14 @@
 package com.revature.service;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.revature.models.Futureworkouts;
-import com.revature.models.Pastworkouts;
 import com.revature.models.Userinfo;
 import com.revature.repository.UserinfoRepo;
 
-
-
-	@Service("UserinfoService")
+@Service("UserinfoService")
 	public class UserinfoService {
 
 		@Autowired //Wire your polkamanRepository bean in using this annotation!
