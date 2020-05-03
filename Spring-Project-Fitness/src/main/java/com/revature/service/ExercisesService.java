@@ -15,14 +15,14 @@ public class ExercisesService {
 		private ExercisesRepo exerRepository;
 		
 		public List<Exercises> getAllExercises(){
-			return this.exerRepository.findAll();
+			return this.exerRepository.getAllExercises();
 		}
 		
 		public void insertExercise(Exercises p) {
-			this.exerRepository.save(p);
+			this.exerRepository.insertExercise(p);
 		}
 		
-		public List<Exercises> getExercisesById(int id){
+		public Exercises getExercisesById(int id){
 			return this.exerRepository.getExercisesById(id);
 		}
 }

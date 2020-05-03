@@ -28,23 +28,33 @@ public class Workouts {
 	@Column
 	int reps;
 	
+	@Column
+	int totalcalories;
+	
 	
 	public Workouts() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Workouts(int workoutNumber, String bodyarea, String exercise, int reps) {
+
+
+	public Workouts(int workoutNumber, String bodyarea, String exercise, int reps, int totalcalories) {
 		super();
 		this.workoutNumber = workoutNumber;
 		this.bodyarea = bodyarea;
 		this.exercise = exercise;
 		this.reps = reps;
+		this.totalcalories = totalcalories;
 	}
+
+
 	@Override
 	public String toString() {
 		return "Workouts [workoutNumber=" + workoutNumber + ", bodyarea=" + bodyarea + ", exercise=" + exercise
-				+ ", reps=" + reps + "]";
+				+ ", reps=" + reps + ", totalcalories=" + totalcalories + "]";
 	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -52,9 +62,12 @@ public class Workouts {
 		result = prime * result + ((bodyarea == null) ? 0 : bodyarea.hashCode());
 		result = prime * result + ((exercise == null) ? 0 : exercise.hashCode());
 		result = prime * result + reps;
+		result = prime * result + totalcalories;
 		result = prime * result + workoutNumber;
 		return result;
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -76,34 +89,62 @@ public class Workouts {
 			return false;
 		if (reps != other.reps)
 			return false;
+		if (totalcalories != other.totalcalories)
+			return false;
 		if (workoutNumber != other.workoutNumber)
 			return false;
 		return true;
 	}
+
+
 	public int getWorkoutNumber() {
 		return workoutNumber;
 	}
+
+
 	public void setWorkoutNumber(int workoutNumber) {
 		this.workoutNumber = workoutNumber;
 	}
+
+
 	public String getBodyarea() {
 		return bodyarea;
 	}
+
+
 	public void setBodyarea(String bodyarea) {
 		this.bodyarea = bodyarea;
 	}
+
+
 	public String getExercise() {
 		return exercise;
 	}
+
+
 	public void setExercise(String exercise) {
 		this.exercise = exercise;
 	}
+
+
 	public int getReps() {
 		return reps;
 	}
+
+
 	public void setReps(int reps) {
 		this.reps = reps;
 	}
-	
+
+
+	public int getTotalcalories() {
+		return totalcalories;
+	}
+
+
+	public void setTotalcalories(int totalcalories) {
+		this.totalcalories = totalcalories;
+	}
+
 	
 }

@@ -1,18 +1,18 @@
 package com.revature.repository;
 
-
-
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.models.Userinfo;
 
 @Repository("UserinfoRepo")
-public interface UserinfoRepo extends JpaRepository<Userinfo, Integer>{
+public interface UserinfoRepo{
 
-		public Userinfo getUserinfoById(int id);
+		public Userinfo findUserByUsername(String username);
 		
-		public void saveUserinfo(Userinfo S);
+		public Userinfo insertUser(Userinfo p);
+
+		public Userinfo updateUser(Userinfo p);
 		
 	}
 

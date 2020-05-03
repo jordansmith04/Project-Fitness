@@ -14,11 +14,16 @@ import com.revature.repository.UserinfoRepo;
 		@Autowired //Wire your polkamanRepository bean in using this annotation!
 		private UserinfoRepo userRepository;
 		
-		public Optional<Userinfo> getUserinfoById(int id){
-			return this.userRepository.findById(id);
+		public Userinfo findUserByUsername(String username){	
+			return this.userRepository.findUserByUsername(username);
 		}
 		
-		public void saveUserinfo(Userinfo S) {
-			this.userRepository.save(S);
+		public void insertUser(Userinfo b) {
+			Userinfo user = userRepository.findUserByUsername(b.getUsername());
+			if(user.getUsername() != null) {
+			this.userRepository.updateUser(b);
+		} else {
+			this.userRepository.insertUser(b);
 		}
+		};
 }
