@@ -14,15 +14,11 @@ public class FutureworkoutsService {
 	@Autowired //Wire your polkamanRepository bean in using this annotation!
 	private FutureworkoutsRepo futworkoutsRepository;
 	
-	public List<Futureworkouts> getAllFutureworkouts(){
-		return this.futworkoutsRepository.findAll();
-	}
-	
 	public void insertFutureworkout(Futureworkouts p) {
-		this.futworkoutsRepository.save(p);
+		this.futworkoutsRepository.insertWorkout(p);
 	}
 	
 	public List<Futureworkouts> getFutureworkoutsById(int id){
-		return this.futworkoutsRepository.getFutureworkoutsById(id);
+		return this.futworkoutsRepository.findAllById(id);
 	}
 }

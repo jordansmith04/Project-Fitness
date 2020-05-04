@@ -31,26 +31,32 @@ public class Exercises {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Exercises(int exerciseNumber, String bodyarea, String exercise) {
+
+	public Exercises(int exerciseNumber, String bodyarea, String exercise, int calories) {
 		super();
 		this.exerciseNumber = exerciseNumber;
 		this.bodyarea = bodyarea;
 		this.exercise = exercise;
+		this.calories = calories;
 	}
+
 	@Override
 	public String toString() {
 		return "Exercises [exerciseNumber=" + exerciseNumber + ", bodyarea=" + bodyarea + ", exercise=" + exercise
-				+ "]";
+				+ ", calories=" + calories + "]";
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bodyarea == null) ? 0 : bodyarea.hashCode());
+		result = prime * result + calories;
 		result = prime * result + ((exercise == null) ? 0 : exercise.hashCode());
 		result = prime * result + exerciseNumber;
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -65,6 +71,8 @@ public class Exercises {
 				return false;
 		} else if (!bodyarea.equals(other.bodyarea))
 			return false;
+		if (calories != other.calories)
+			return false;
 		if (exercise == null) {
 			if (other.exercise != null)
 				return false;
@@ -74,23 +82,37 @@ public class Exercises {
 			return false;
 		return true;
 	}
+
 	public int getExerciseNumber() {
 		return exerciseNumber;
 	}
+
 	public void setExerciseNumber(int exerciseNumber) {
 		this.exerciseNumber = exerciseNumber;
 	}
+
 	public String getBodyarea() {
 		return bodyarea;
 	}
+
 	public void setBodyarea(String bodyarea) {
 		this.bodyarea = bodyarea;
 	}
+
 	public String getExercise() {
 		return exercise;
 	}
+
 	public void setExercise(String exercise) {
 		this.exercise = exercise;
+	}
+
+	public int getCalories() {
+		return calories;
+	}
+
+	public void setCalories(int calories) {
+		this.calories = calories;
 	}
 	
 	
