@@ -26,19 +26,13 @@ public class PastworkoutsController {
 		this.pService = pService;
 	}
 	
-	@PostMapping(path = "/AllPast", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
-	public List<Pastworkouts> getPastWorkouts() {
-		List<Pastworkouts> list = pService.getAllPastworkouts();
-		return list;
-	}
-	
-	@GetMapping(path = "/NewPast/{p}")
-	public void insertPastworkout(@PathVariable Pastworkouts p) {
+	@PostMapping(path = "/NewPast")
+	public void insertPastworkout(Pastworkouts p) {
 		this.pService.insertPastworkout(p);
 	}
 	
-	@RequestMapping (path = "/GetPast/{id}")
+	@GetMapping (path = "/GetPast/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody 
 	public List<Pastworkouts> getPastworkoutsById(@PathVariable int id){
 		return this.pService.getPastworkoutsById(id);
 	}

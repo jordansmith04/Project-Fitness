@@ -1,13 +1,26 @@
 package com.revature;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.ArrayList;
+import java.util.List;
 
-@SpringBootApplication
+import com.revature.models.Exercises;
+import com.revature.models.Userinfo;
+import com.revature.service.UserinfoService;
+
 public class SpringProjectFitnessApplication {
-
+	List<Exercises> list = new ArrayList<>();
+	static Userinfo s = new Userinfo("admin", "admin1", 22, 72, 180, 2);
+	static UserinfoService userv = new UserinfoService();
+	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringProjectFitnessApplication.class, args);
+		
+		userv.insertUser(s);
+		
+//		SpringApplication.run(SpringProjectFitnessApplication.class, args);
+		
+		
+		
+		
 	}
 
 }
