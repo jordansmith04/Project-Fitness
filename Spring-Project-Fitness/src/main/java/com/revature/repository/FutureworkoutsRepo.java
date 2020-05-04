@@ -2,18 +2,18 @@ package com.revature.repository;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.revature.models.Futureworkouts;
 
-@Repository("FutureworkoutsRepo")
-public interface FutureworkoutsRepo extends JpaRepository<Futureworkouts, Integer>{
+import com.revature.models.Workouts;
 
-	
-	public List<Futureworkouts> getAllPastworkouts();
-	
-	public void insertFutureworkout(Futureworkouts p);
-	
-	public List<Futureworkouts> getFutureworkoutsById(int id);
+@Repository("FutureworkoutsRepo")
+public interface FutureworkoutsRepo {
+
+	public void insertWorkout(Futureworkouts p);
+
+	public List<Futureworkouts> findAllById(int id);
+
+	void deleteFutureworkout(Futureworkouts f);
 }
