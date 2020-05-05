@@ -39,7 +39,7 @@ public class FutureworkoutsRepoImpl implements FutureworkoutsRepo{
 		try {
 			s = HibernateConfiguration.getSession();
 			tx = s.beginTransaction();
-			Ex = s.createQuery("FROM futureworkouts where id= :id order by date asc", Futureworkouts.class).getResultList();
+			Ex = s.createQuery("FROM futureworkouts where id= :id", Futureworkouts.class).getResultList();
 			s.setProperty("id", id);
 			tx.commit();
 		}catch(HibernateException ex) {

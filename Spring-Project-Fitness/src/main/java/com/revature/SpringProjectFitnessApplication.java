@@ -3,21 +3,36 @@ package com.revature;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Configurable;
+import org.springframework.stereotype.Component;
+
 import com.revature.models.Exercises;
 import com.revature.models.Userinfo;
 import com.revature.repository.UserinfoRepo;
 import com.revature.repository.UserinfoRepoImpl;
 
+@Component
+@Configurable
 public class SpringProjectFitnessApplication {
 	List<Exercises> list = new ArrayList<>();
 	static Userinfo s = new Userinfo("admin", "admin1", 22, 72, 180, 2);
-	static UserinfoRepo userv = new UserinfoRepoImpl();
+
+	static Userinfo b;
 	
+	private UserinfoService uService;
+	
+	@Autowired
+	public UserinfoService Userinfo(UserinfoService uService) {
+		return this.uService = uService;
+	}
+	
+	static Exercises p = new Exercises(1, "arms", "pushups", 1);
 	public static void main(String[] args) {
 		
-		userv.insertUser(s);
 		
-//		SpringApplication.run(SpringProjectFitnessApplication.class, args);
+		System.out.println();
+//		eserve.insertExercise(p);
 		
 		
 		
