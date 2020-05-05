@@ -31,7 +31,8 @@ public class UserinfoRepoImpl implements UserinfoRepo{
 	}
 
 	@Override
-	public Userinfo insertUser(Userinfo p) {
+
+	public Userinfo insertUser(Userinfo p){
 		Session s = null;
 		Transaction tx = null;
 		

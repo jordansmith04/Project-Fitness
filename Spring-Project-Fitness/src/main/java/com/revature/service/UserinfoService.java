@@ -16,12 +16,16 @@ import com.revature.repository.UserinfoRepo;
 			return this.userRepository.findUserByUsername(username);
 		}
 		
+
 		public Userinfo insertUser(Userinfo b) {
+
 //			Userinfo user = userRepository.findUserByUsername(b.getUsername());
 //			if(user.getUsername() != null) {
 //			this.userRepository.updateUser(b);
 //		} else {
+
 			return this.userRepository.insertUser(b);
+
 //		}
 		};
 }
