@@ -7,15 +7,13 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-
-import com.revature.models.Pastworkouts;
+import com.revature.models.Workouts;
 import com.revature.util.HibernateConfiguration;
 
-
-public class PastworkoutsRepoImpl implements PastworkoutsRepo{
+public class WorkoutsRepoImpl implements WorkoutsRepo {
 
 	@Override
-	public void insertWorkout(Pastworkouts p) {
+	public void insertWorkout(Workouts p) {
 		Session s = null;
 		Transaction tx = null;
 		try {
@@ -34,14 +32,14 @@ public class PastworkoutsRepoImpl implements PastworkoutsRepo{
 	}
 
 	@Override
-	public List<Pastworkouts> findPastworkoutById(int userID) {
-		List<Pastworkouts> Ex = new ArrayList<>();
+	public List<Workouts> findWorkoutById(int userID) {
+		List<Workouts> Ex = new ArrayList<>();
 		Session s = null;
 		Transaction tx = null;
 		try {
 			s = HibernateConfiguration.getSession();
 			tx = s.beginTransaction();
-			Ex = s.createQuery("FROM pastworkouts where userid= :id order by date asc", Pastworkouts.class).getResultList();
+			Ex = s.createQuery("FROM pastworkouts where userid= :id group by workoutNumber", Workouts.class).getResultList();
 			s.setProperty("id", userID);
 			tx.commit();
 		}catch(HibernateException ex) {
@@ -53,8 +51,26 @@ public class PastworkoutsRepoImpl implements PastworkoutsRepo{
 		
 		return Ex;
 	}
-	
 
+	@Override
+	public List<Workouts> getAllWorkouts() {
+		List<Workouts> Ex = new ArrayList<>();
+		Session s = null;
+		Transaction tx = null;
+		try {
+			s = HibernateConfiguration.getSession();
+			tx = s.beginTransaction();
+			Ex = s.createQuery("FROM workouts", Workouts.class).getResultList();
+			tx.commit();
+		}catch(HibernateException ex) {
+			tx.rollback();
+			ex.printStackTrace();
+		}finally {
+			s.close();
+		}
+		
+		return Ex;
+	}
 	
 	
 }

@@ -32,7 +32,6 @@ public class UserinfoRepoImpl implements UserinfoRepo{
 
 	@Override
 	public Userinfo insertUser(Userinfo p) {
-		Userinfo user = new Userinfo();
 		Session s = null;
 		Transaction tx = null;
 		
@@ -48,7 +47,7 @@ public class UserinfoRepoImpl implements UserinfoRepo{
 			s.close();
 		}
 		
-		return user;
+		return p;
 	}
 
 	@Override
