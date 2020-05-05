@@ -10,7 +10,6 @@ import javax.persistence.Table;
 
 
 @Entity
-
 @Table (name = "workouts")
 public class Workouts {
 	@Id //denotes that this column is the primary key for this table.

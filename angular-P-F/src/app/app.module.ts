@@ -1,11 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms'
 
 import { AppRoutingModule, routingComponents} from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ExerciseComponent } from './exercise/exercise.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { WorkoutsComponent } from './components/workouts/workouts.component';
+
 
 
 @NgModule({
@@ -13,13 +17,18 @@ import { ExerciseComponent } from './exercise/exercise.component';
     AppComponent,
     NavbarComponent,
     routingComponents,
-    ExerciseComponent
+    ExerciseComponent,
+    WorkoutsComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,8 +16,8 @@ which defines the valid elements of a hibernate configuration file. -->
 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		<!-- Configure our DB url, username, and password. -->
 		<property name="hibernate.connection.url">jdbc:postgresql://projecttwodb.cmspzoonoz9m.us-east-2.rds.amazonaws.com:5432/projecttwodb</property>
-		<property name="hibernate.connection.username">admin</property>
-		<property name="hibernate.connection.password">admin1</property>
+		<property name="hibernate.connection.username">admin1</property>
+		<property name="hibernate.connection.password">administrator1</property>
 		<!-- This determines how many connections a single user is allowed to a DB. Having several connections
 		speeds up the database process for a user, but it also eats up all available connections you have for a 
 		database much more quickly. -->

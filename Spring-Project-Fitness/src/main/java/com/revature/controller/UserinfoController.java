@@ -24,9 +24,9 @@ public class UserinfoController {
 		this.uService = uService;
 	}
 	
-	@PostMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path = "/id", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Userinfo getUserinfoByUsername(@PathVariable String username){
+	public Userinfo getUserinfoByUsername(String username){
 		return this.uService.findUserByUsername(username);
 	}
 	
