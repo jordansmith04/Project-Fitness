@@ -2,12 +2,12 @@ package com.revature.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 
 import com.revature.models.Userinfo;
 import com.revature.service.UserinfoService;
@@ -24,13 +24,13 @@ public class UserinfoController {
 		this.uService = uService;
 	}
 	
-	@PostMapping(path = "/id", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Userinfo getUserinfoByUsername(String username){
+	public Userinfo getUserinfoByUsername(@PathVariable String username){
 		return this.uService.findUserByUsername(username);
 	}
 	
-	@PostMapping(path= "/userinfo")
+	@PostMapping(path= "/userinfo", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public void saveUserinfo(Userinfo S) {
 		this.uService.insertUser(S);
