@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 
 import com.revature.models.Exercises;
 import com.revature.models.Userinfo;
-import com.revature.repository.UserinfoRepo;
-import com.revature.repository.UserinfoRepoImpl;
+import com.revature.service.UserinfoService;
 
 @Component
 @Configurable
@@ -26,10 +25,12 @@ public class SpringProjectFitnessApplication {
 	public UserinfoService Userinfo(UserinfoService uService) {
 		return this.uService = uService;
 	}
+
 	
 	static Exercises p = new Exercises(1, "arms", "pushups", 1);
 	public static void main(String[] args) {
 		
+
 		
 		System.out.println();
 //		eserve.insertExercise(p);
