@@ -7,6 +7,7 @@ import { AppRoutingModule, routingComponents} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { WorkoutsComponent } from './components/workouts/workouts.component';
 
 
 
@@ -14,7 +15,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   declarations: [
     AppComponent,
     NavbarComponent,
-    routingComponents
+    routingComponents,
+    WorkoutsComponent
     
   ],
   imports: [
