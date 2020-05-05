@@ -15,12 +15,12 @@ public class HibernateConfiguration {
 	
 	public static Session getSession() {
 		try {
-			if (sessionFactory == null) {
+//			if (sessionFactory == null) {
 				sessionFactory = new Configuration().configure()
 						.setProperty("hibernate.connection.url", System.getenv("url"))
 						.setProperty("hibernate.connection.username", System.getenv("username"))
 						.setProperty("hibernate.connection.password", System.getenv("password")).buildSessionFactory();
-			}
+//			}
 			return sessionFactory.getCurrentSession();
 		} catch (HibernateException e) {
 			e.printStackTrace();

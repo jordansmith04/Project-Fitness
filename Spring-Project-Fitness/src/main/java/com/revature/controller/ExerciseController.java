@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.revature.models.Exercises;
 import com.revature.service.ExercisesService;
@@ -20,6 +21,9 @@ public class ExerciseController {
 		
 		//I need a service dependency.
 		private ExercisesService exerService;
+		
+		@Autowired
+		private RestTemplate restTemplate;
 		
 		@Autowired //Autowired in dependency using constructor injection.
 		public ExerciseController(ExercisesService exerService) {

@@ -10,7 +10,7 @@ public interface UserinfoRepo{
 
 		public Userinfo findUserByUsername(String username);
 		
-		public void insertUser(Userinfo p);
+		public Userinfo insertUser(Userinfo p);
 
 		public Userinfo updateUser(Userinfo p);
 		
