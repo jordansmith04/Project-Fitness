@@ -12,6 +12,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>Spring-Project-Fitness</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>Spring-Project-Fitness</name>
 	<description>Demo project for Spring Boot</description>
 
