@@ -1,28 +1,28 @@
 export class User{
 
-    private id:number; 
+    // private id:number; 
     private username:string;
-    private password:string;
+    private pass:string;
     private age:number;
     private height:number;
     private weight:number;
 
-    constructor(id:number, username:string, password:string, age:number, height:number, weight:number){
-        this.id = id;
+    constructor(username:string, pass:string, age:number, height:number, weight:number){
+        // this.id = id;
         this.username = username;
-        this.password = password;
+        this.pass = pass;
         this.age = age;
         this.height = height;
         this.weight = weight;
     }
 
-    public getId():number{
-        return this.id;
-    }
+    // public getId():number{
+    //     return this.id;
+    // }
 
-    public setId(id:number){
-        this.id = id;
-    }
+    // public setId(id:number){
+    //     this.id = id;
+    // }
 
     public getUsername():string{
         return this.username;
@@ -32,12 +32,12 @@ export class User{
         this.username = username;
     }
 
-    public getPassword():string{
-        return this.password;
+    public getPass():string{
+        return this.pass;
     }
 
-    public setPassword(password:string){
-        this.password = password;
+    public setPass(pass:string){
+        this.pass = pass;
     }
 
     public getAge():number{

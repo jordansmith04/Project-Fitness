@@ -31,7 +31,8 @@ public class UserinfoRepoImpl implements UserinfoRepo{
 	}
 
 	@Override
-	public Userinfo insertUser(Userinfo p) {
+
+	public Userinfo insertUser(Userinfo p){
 		Session s = null;
 		Transaction tx = null;
 		
@@ -41,9 +42,10 @@ public class UserinfoRepoImpl implements UserinfoRepo{
 			s.save(p);
 			tx.commit();
 		}catch(HibernateException e) {
+			tx.rollback();
 			e.printStackTrace();
 		}finally {
-			tx.rollback();
+			
 			s.close();
 		}
 		
