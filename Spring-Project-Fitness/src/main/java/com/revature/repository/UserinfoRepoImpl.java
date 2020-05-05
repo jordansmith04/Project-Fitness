@@ -42,9 +42,10 @@ public class UserinfoRepoImpl implements UserinfoRepo{
 			s.save(p);
 			tx.commit();
 		}catch(HibernateException e) {
+			tx.rollback();
 			e.printStackTrace();
 		}finally {
-			tx.rollback();
+			
 			s.close();
 		}
 		
