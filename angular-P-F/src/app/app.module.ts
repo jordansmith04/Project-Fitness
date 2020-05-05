@@ -16,9 +16,9 @@ import { WorkoutsComponent } from './components/workouts/workouts.component';
   declarations: [
     AppComponent,
     NavbarComponent,
-    routingComponents,
-    ExerciseComponent,
-    WorkoutsComponent
+    routingComponents
+    // ExerciseComponent,
+  
     
   ],
   imports: [
