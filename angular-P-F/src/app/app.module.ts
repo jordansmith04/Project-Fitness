@@ -19,14 +19,8 @@ import { StretchComponent } from './components/stretch/stretch.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     routingComponents,
-    WorkoutsComponent,
-    ChestArmsComponent,
-    LegsComponent,
-    BackShoulderComponent,
-    AbsComponent,
-    StretchComponent
+    WorkoutsComponent
     
   ],
   imports: [
