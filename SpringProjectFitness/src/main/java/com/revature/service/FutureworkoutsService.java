@@ -18,7 +18,7 @@ public class FutureworkoutsService {
 		return this.futureworkoutsRepository.save(p);
 	};
 	
-	public List<Futureworkouts> findAllByUserID(int userID){
-		return this.futureworkoutsRepository.findAllByUserID(userID);
+	public List<Futureworkouts> findAllByUsername(String username){
+		return this.futureworkoutsRepository.findAllByUsername(username);
 	};
 }
