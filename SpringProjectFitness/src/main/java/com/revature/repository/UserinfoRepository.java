@@ -11,5 +11,5 @@ public interface UserinfoRepository extends JpaRepository<Userinfo, Integer>{
 
 	
 	Userinfo findByUsername(String username);
-	<S extends Userinfo> S saveAndFlush(Userinfo p);
+	<S extends Userinfo> S save(Userinfo p);
 }

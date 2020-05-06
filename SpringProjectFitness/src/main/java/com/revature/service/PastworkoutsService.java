@@ -19,7 +19,7 @@ public class PastworkoutsService {
 		return this.pastworkoutsRepository.save(p);	
 	};
 	
-	public List<Pastworkouts> findAllByUserID(int userID){
-		return this.findAllByUserID(userID);
+	public List<Pastworkouts> findAllByUsername(String username){
+		return this.findAllByUsername(username);
 	};
 }

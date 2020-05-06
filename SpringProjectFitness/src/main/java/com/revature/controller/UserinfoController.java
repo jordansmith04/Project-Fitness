@@ -23,6 +23,7 @@ public class UserinfoController {
 	}
 	@GetMapping(path="/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
+	@CrossOrigin(origins = "http://localhost:4200")
 	public Userinfo findByUsername(@PathVariable String username) {
 		return this.userinfoService.findByUsername(username);
 	};
@@ -30,7 +31,7 @@ public class UserinfoController {
 	@PostMapping(path="/NewUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4200")
-	public <S extends Userinfo> S saveAndFlush(Userinfo p) {
-		return this.userinfoService.saveAndFlush(p);
+	public <S extends Userinfo> Userinfo save(Userinfo p) {
+		return this.userinfoService.save(p);
 	};
 }

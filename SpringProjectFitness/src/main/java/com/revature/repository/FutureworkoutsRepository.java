@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.revature.models.Futureworkouts;
-import com.revature.models.Userinfo;
 
 @Repository("futureworkoutsRepository")
 public interface FutureworkoutsRepository  extends JpaRepository<Futureworkouts, Integer>{
@@ -14,5 +13,5 @@ public interface FutureworkoutsRepository  extends JpaRepository<Futureworkouts,
 	
 	<S extends Futureworkouts> S save(Futureworkouts p);
 	
-	List<Futureworkouts> findAllByUserID(int userID);
+	List<Futureworkouts> findAllByUsername(String username);
 }
