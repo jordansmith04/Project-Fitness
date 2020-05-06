@@ -16,6 +16,8 @@ public interface ExercisesRepo{
 	public void insertExercise(Exercises p);
 	
 	public Exercises getExercisesById(int id);
+
+	List<Exercises> getAllExercisesbyBody(String bodyarea);
 }
 
 

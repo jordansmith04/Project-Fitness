@@ -74,5 +74,23 @@ public class ExercisesRepoImpl implements ExercisesRepo{
 		return Ex;
 	}
 	
+	@Override
+	public List<Exercises> getAllExercisesbyBody(String bodyarea){
+		List<Exercises> Ex = new ArrayList<>();
+		Session s = null;
+		Transaction tx = null;
+	try {
+		s = HibernateConfiguration.getSession();
+		tx = s.beginTransaction();
+		Ex = s.createQuery("FROM exercises where :bodyarea", Exercises.class).setParameter("bodyarea", bodyarea).getResultList();
+		tx.commit();
+	}catch(HibernateException ex) {
+		tx.rollback();
+		ex.printStackTrace();
+	}finally {
+		s.close();
+	}
+	 return Ex;
+	}
 	
 }
