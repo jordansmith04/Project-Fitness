@@ -13,5 +13,5 @@ public interface PastworkoutsRepository  extends JpaRepository<Pastworkouts, Int
 
 <S extends Pastworkouts> S save(Pastworkouts p);
 	
-	List<Pastworkouts> findAllByUserID(int userID);
+	List<Pastworkouts> findAllByUsername(String username);
 }

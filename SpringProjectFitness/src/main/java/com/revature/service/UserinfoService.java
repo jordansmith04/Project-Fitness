@@ -16,7 +16,7 @@ public class UserinfoService {
 		return this.userinfoRepository.findByUsername(username);
 	};
 	
-	public <S extends Userinfo> S saveAndFlush(Userinfo p) {
-		return this.userinfoRepository.saveAndFlush(p);
+	public <S extends Userinfo> Userinfo save(Userinfo p) {
+		return this.userinfoRepository.save(p);
 	};
 }
