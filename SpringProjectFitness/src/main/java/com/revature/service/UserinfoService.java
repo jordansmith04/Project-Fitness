@@ -1,7 +1,6 @@
 package com.revature.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import com.revature.models.Userinfo;
@@ -13,8 +12,8 @@ public class UserinfoService {
 	@Autowired
 	private UserinfoRepository userinfoRepository;
 
-	public Userinfo findById(@Param("id") int id) {
-		return this.userinfoRepository.findById(id);
+	public Userinfo findByUsername(String username) {
+		return this.userinfoRepository.findByUsername(username);
 	};
 	
 	public <S extends Userinfo> S saveAndFlush(Userinfo p) {

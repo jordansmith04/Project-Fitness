@@ -14,7 +14,7 @@ public class WorkoutsService {
 	@Autowired
 	private WorkoutsRepository workoutsRepository;
 	
-	public List<Workouts> findAllByExerciseNumber(int exerciseNumber){
-		return this.workoutsRepository.findAllByExerciseNumber(exerciseNumber);
+	public List<Workouts> findAllByExercisenumber(int exercisenumber){
+		return this.workoutsRepository.findAllByExercisenumber(exercisenumber);
 	};
 }
