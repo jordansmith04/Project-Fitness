@@ -44,6 +44,12 @@ public class ExerciseController {
 			exerService.insertExercise(e);
 		}	
 		
+		@PostMapping(path = "/exercises")
+		public List<Exercises> getAllExercisesbyBody(String bodyarea){
+			List<Exercises> list = exerService.getAllExercisesbyBody(bodyarea);
+			return list;
+		}
+		
 		
 		
 }

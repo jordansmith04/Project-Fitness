@@ -25,4 +25,9 @@ public class ExercisesService {
 		public Exercises getExercisesById(int id){
 			return this.exerRepository.getExercisesById(id);
 		}
+
+		public List<Exercises> getAllExercisesbyBody(String bodyarea) {
+			return this.exerRepository.getAllExercisesbyBody(bodyarea);
+			
+		}
 }
