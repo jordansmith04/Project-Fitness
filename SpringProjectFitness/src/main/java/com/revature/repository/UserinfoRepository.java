@@ -10,6 +10,6 @@ import com.revature.models.Userinfo;
 public interface UserinfoRepository extends JpaRepository<Userinfo, Integer>{
 
 	
-	Userinfo findById(@Param("id") int id);
+	Userinfo findByUsername(String username);
 	<S extends Userinfo> S saveAndFlush(Userinfo p);
 }

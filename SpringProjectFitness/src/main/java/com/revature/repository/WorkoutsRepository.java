@@ -10,6 +10,6 @@ import com.revature.models.Workouts;
 @Repository("workoutsRepository")
 public interface WorkoutsRepository  extends JpaRepository<Workouts, Integer> {
 
-	List<Workouts> findAllByExerciseNumber(int exerciseNumber);
+	List<Workouts> findAllByExercisenumber(int exercisenumber);
 	
 	}
