@@ -26,10 +26,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('angular-P-F');
   });
 
-  it('should render title', () => {
+  it('should not render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('angular-P-F app is running!');
+    const app = fixture.nativeElement;
+    expect(app.title).toEqual('');
   });
 });
