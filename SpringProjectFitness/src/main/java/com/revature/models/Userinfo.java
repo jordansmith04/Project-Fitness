@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Userinfo {
 	
 	@Id //denotes that this column is the primary key for this table.
-	@Column
+	@Column(name = "username",unique=true, nullable = false)
 	String username;
 	
 	@Column
