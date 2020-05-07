@@ -21,7 +21,7 @@ public class UserinfoController {
 	public UserinfoController(UserinfoService userinfoService) {
 		this.userinfoService = userinfoService;
 	}
-	@GetMapping(path="/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path="/{username}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4200")
 	public Userinfo findByUsername(@PathVariable String username) {
