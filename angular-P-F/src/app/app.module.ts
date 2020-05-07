@@ -13,6 +13,7 @@ import { LegsComponent } from './components/legs/legs.component';
 import { BackShoulderComponent } from './components/back-shoulder/back-shoulder.component';
 import { AbsComponent } from './components/abs/abs.component';
 import { StretchComponent } from './components/stretch/stretch.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -20,7 +21,8 @@ import { StretchComponent } from './components/stretch/stretch.component';
   declarations: [
     AppComponent,
     routingComponents,
-    WorkoutsComponent
+    WorkoutsComponent,
+    ProfileComponent
     
   ],
   imports: [
