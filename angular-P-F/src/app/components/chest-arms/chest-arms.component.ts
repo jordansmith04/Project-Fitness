@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { FutureWorkouts } from 'src/app/model/FutureWorkouts';
 
 @Component({
   selector: 'app-chest-arms',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChestArmsComponent implements OnInit {
 
-  constructor() { }
+  generatedWork = new FutureWorkouts('carlo', 'pushups', 10)
+  constructor(private chestArmService: UserService) { }
 
   ngOnInit(): void {
+  }
+
+  addChestArm(){
+    this.chestArmService.insertFutureWorkout(this.generatedWork)
   }
 
 }
