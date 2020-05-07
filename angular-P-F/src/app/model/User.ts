@@ -3,15 +3,15 @@ export class User{
     // private id:number; 
     private username:string;
     private pass:string;
-    private age:number;
+    private ages:number;
     private height:number;
     private weight:number;
 
-    constructor(username:string, pass:string, age:number, height:number, weight:number){
+    constructor(username:string, pass:string, ages:number, height:number, weight:number){
         // this.id = id;
         this.username = username;
         this.pass = pass;
-        this.age = age;
+        this.ages = ages;
         this.height = height;
         this.weight = weight;
     }
@@ -41,11 +41,11 @@ export class User{
     }
 
     public getAge():number{
-        return this.age;
+        return this.ages;
     }
 
-    public setAge(age:number){
-        this.age = age;
+    public setAge(ages:number){
+        this.ages = ages;
     }
 
     public getHeight():number{
