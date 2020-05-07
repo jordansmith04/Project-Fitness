@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Pastworkouts;
@@ -26,15 +26,14 @@ public class PastworkoutsController {
 	}
 	
 	@PostMapping(path="/NewPast", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
 	@CrossOrigin(origins = "http://localhost:4200")
-	public <S extends Pastworkouts> Pastworkouts save(Pastworkouts p) {
-		return this.pastworkoutsService.save(p);
+	public <S extends Pastworkouts> void insertPastworkout(@RequestBody Pastworkouts p) {
+		this.pastworkoutsService.insertPastworkout(p);
 	};
 	
-	@GetMapping(path="/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path="/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "http://localhost:4200")
-	public List<Pastworkouts> findAllByUsername(@PathVariable String username){
-		return this.pastworkoutsService.findAllByUsername(username);
+	public List<Pastworkouts> getPastworkouts(@PathVariable String username){
+		return this.pastworkoutsService.getPastworkouts(username);
 	};
 }

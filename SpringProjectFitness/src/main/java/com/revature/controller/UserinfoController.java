@@ -24,15 +24,16 @@ public class UserinfoController {
 	public UserinfoController(UserinfoService userinfoService) {
 		this.userinfoService = userinfoService;
 	}
+	
 	@GetMapping(path="/{username}",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "http://localhost:4200")
 	public ResponseEntity<Userinfo> findByUsername(@PathVariable String username) {
 		return new ResponseEntity<>(this.userinfoService.findByUsername(username), HttpStatus.OK);
 	};
 	
-	@PostMapping(path="/NewUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path="/NewUser", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "http://localhost:4200")
-	public void insertUser(Userinfo p) {
+	public void insertUser(@RequestBody Userinfo p) {
 		this.userinfoService.insertUser(p);
 	};
 }

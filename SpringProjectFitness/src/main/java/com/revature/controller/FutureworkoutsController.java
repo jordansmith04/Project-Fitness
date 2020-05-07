@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
 import com.revature.models.Futureworkouts;
 import com.revature.service.FutureworkoutsService;
 
@@ -24,16 +25,17 @@ public class FutureworkoutsController {
 		this.futureworkoutsService = futureworkoutsService;
 	}
 	
-	@PostMapping(path="/NewFuture", produces = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
+	
+	@PostMapping(path="/NewFuture", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "http://localhost:4200")
-	public <S extends Futureworkouts> S save(Futureworkouts p) {
-		return this.futureworkoutsService.save(p);
+	public <S extends Futureworkouts> void insertFuture(@RequestBody Futureworkouts p) {
+		this.futureworkoutsService.insertFuture(p);
 	};
 	
-	@GetMapping(path="/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path="/username/{username}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "http://localhost:4200")
 	public List<Futureworkouts> findAllByUsername(@PathVariable String username){
-		return this.futureworkoutsService.findAllByUsername(username);
+		List<Futureworkouts> list = this.futureworkoutsService.findAllByUsername(username);
+		return list;
 	};
 }

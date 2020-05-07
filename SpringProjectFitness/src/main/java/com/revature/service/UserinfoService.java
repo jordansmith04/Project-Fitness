@@ -18,6 +18,6 @@ public class UserinfoService {
 	
 	public void insertUser(Userinfo p) { 
 		System.out.println(p);
-		this.userinfoRepository.saveAndFlush(p);
+		this.userinfoRepository.save(p);
 	};
 }
