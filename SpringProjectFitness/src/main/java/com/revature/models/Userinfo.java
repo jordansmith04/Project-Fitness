@@ -18,10 +18,10 @@ public class Userinfo {
 	String pass; 
 	
 	@Column
-	int age;
+	int ages;
 	
 	@Column
-	int height;
+	int heights;
 	
 	@Column
 	int weight;
@@ -31,27 +31,27 @@ public class Userinfo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Userinfo(String username, String pass, int age, int height, int weight) {
+	public Userinfo(String username, String pass, int ages, int heights, int weight) {
 		super();
 		this.username = username;
 		this.pass = pass;
-		this.age = age;
-		this.height = height;
+		this.ages = ages;
+		this.heights = heights;
 		this.weight = weight;
 	}
 
 	@Override
 	public String toString() {
-		return "Userinfo [username=" + username + ", pass=" + pass + ", age=" + age + ", height=" + height + ", weight="
-				+ weight + "]";
+		return "Userinfo [username=" + username + ", pass=" + pass + ", ages=" + ages + ", heights=" + heights
+				+ ", weight=" + weight + "]";
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + age;
-		result = prime * result + height;
+		result = prime * result + ages;
+		result = prime * result + heights;
 		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		result = prime * result + weight;
@@ -67,9 +67,9 @@ public class Userinfo {
 		if (getClass() != obj.getClass())
 			return false;
 		Userinfo other = (Userinfo) obj;
-		if (age != other.age)
+		if (ages != other.ages)
 			return false;
-		if (height != other.height)
+		if (heights != other.heights)
 			return false;
 		if (pass == null) {
 			if (other.pass != null)
@@ -102,20 +102,20 @@ public class Userinfo {
 		this.pass = pass;
 	}
 
-	public int getAge() {
-		return age;
+	public int getAges() {
+		return ages;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setAges(int ages) {
+		this.ages = ages;
 	}
 
-	public int getHeight() {
-		return height;
+	public int getHeights() {
+		return heights;
 	}
 
-	public void setHeight(int height) {
-		this.height = height;
+	public void setHeights(int heights) {
+		this.heights = heights;
 	}
 
 	public int getWeight() {
@@ -125,6 +125,7 @@ public class Userinfo {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
+
 	
 	
 
