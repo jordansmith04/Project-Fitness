@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-
 @Table (name = "pastworkouts")
 public class Pastworkouts {
 
