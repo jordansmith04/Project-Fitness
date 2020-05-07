@@ -32,7 +32,7 @@ public class UserinfoController {
 	
 	@PostMapping(path="/NewUser", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@CrossOrigin(origins = "http://localhost:4200")
-	public void InsertUser(Userinfo p) {
+	public void insertUser(Userinfo p) {
 		this.userinfoService.insertUser(p);
 	};
 }
