@@ -17,6 +17,7 @@ public class UserinfoService {
 	};
 	
 	public <S extends Userinfo> Userinfo save(Userinfo p) {
-		return this.userinfoRepository.save(p);
+		Userinfo u = this.userinfoRepository.save(p);
+		return u;
 	};
 }
