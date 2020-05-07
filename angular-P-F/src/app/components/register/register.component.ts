@@ -13,10 +13,10 @@ export class RegisterComponent implements OnInit {
   onSubmit(value: any) {
     console.log(value)
     this.registerService.insertUser(this.userModel)
-    .subscribe(
-      data => console.log("success", data),
-      error => console.error("error", error)
-    )
+    // .subscribe(
+    //   data => console.log("success", data),
+    //   error => console.error("error", error)
+    // )
   }
 
   constructor(private registerService: RegisterService) { }
