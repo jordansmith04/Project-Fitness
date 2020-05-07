@@ -11,11 +11,11 @@ export class RegisterService {
   url = 'http://localhost:8080/user/userinfo';
 
   constructor(private http: HttpClient) { 
-
+    
   }
 
   insertUser(user: User) {
     return this.http.post<any>(this.url, user);
-  }
 
+}
 }
