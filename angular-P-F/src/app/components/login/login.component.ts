@@ -9,11 +9,11 @@ import { User } from 'src/app/model/User';
 })
 export class LoginComponent implements OnInit {
   users: User[] = [];
-  constructor(private userSerivce: UserService) { }
+  constructor(private userService: UserService) { }
 
   onSubmit(username){
     console.log(username)
-    this.userSerivce.getUser(username)
+    this.userService.getUser(username)
     .subscribe(
       (data) => {
       console.log("success", data),
@@ -33,5 +33,8 @@ export class LoginComponent implements OnInit {
   getLogin(username){
     console.log(username)
     this.loginData.push(username)
+    this.userService.sendUsername(username)
   }
+
+
 }
