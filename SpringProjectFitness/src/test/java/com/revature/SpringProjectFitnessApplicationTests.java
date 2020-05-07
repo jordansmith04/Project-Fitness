@@ -8,6 +8,7 @@ class SpringProjectFitnessApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
