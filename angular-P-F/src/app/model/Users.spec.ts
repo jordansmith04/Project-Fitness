@@ -12,7 +12,6 @@ it('should accept values',() => {
          this.ages=22,
         this.heights=55,
          this.weights=180,)
-    
     expect(m.this.username).toEqual("kgsmith");
     expect(m.this.pass).toEqual("adfa");
     expect(m.this.ages).toEqual(22);
