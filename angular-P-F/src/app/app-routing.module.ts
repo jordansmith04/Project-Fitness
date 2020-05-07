@@ -10,6 +10,7 @@ import { LegsComponent } from './components/legs/legs.component';
 import { BackShoulderComponent } from './components/back-shoulder/back-shoulder.component';
 import { AbsComponent } from './components/abs/abs.component';
 import { StretchComponent } from './components/stretch/stretch.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'legs', component: LegsComponent},
   {path:'backShoulder', component: BackShoulderComponent},
   {path:'Abs', component: AbsComponent},
-  {path:'stretches', component: StretchComponent}
+  {path:'stretches', component: StretchComponent},
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -31,4 +33,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 export const routingComponents = [LoginComponent, RegisterComponent, WorkoutsComponent, NavbarComponent,
-   ChestArmsComponent, LegsComponent, BackShoulderComponent, AbsComponent, StretchComponent]
+   ChestArmsComponent, LegsComponent, BackShoulderComponent, AbsComponent, StretchComponent, ProfileComponent]
