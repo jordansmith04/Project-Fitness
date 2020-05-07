@@ -9,7 +9,9 @@ import {RegisterService} from '../../services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-  userModel 
+
+  userModel = new User("carlo", "asdf", 22, 70, 195);
+
   onSubmit(value: any) {
     console.log(value)
     this.registerService.insertUser(this.userModel)

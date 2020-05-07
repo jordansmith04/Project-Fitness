@@ -1,18 +1,19 @@
 export class User{
 
     // private id:number; 
-    username:string;
-    pass:string;
-    ages:number;
-    height:number;
-    weight:number;
+    private username:string;
+    private pass:string;
+    private ages:number;
+    private heights:number;
+    private weight:number;
+    this: any;
 
-    constructor(username:string, pass:string, ages:number, height:number, weight:number){
-        
+    constructor(username:string, pass:string, ages:number, heights:number, weight:number){
+        // this.id = id;
         this.username = username;
         this.pass = pass;
         this.ages = ages;
-        this.height = height;
+        this.heights = heights;
         this.weight = weight;
     }
 
@@ -41,11 +42,11 @@ export class User{
     }
 
     public getHeight():number{
-        return this.height;
+        return this.heights;
     }
 
-    public setHeight(height:number){
-        this.height = height;
+    public setHeight(heights:number){
+        this.heights = heights;
     }
 
     public getWeight():number{

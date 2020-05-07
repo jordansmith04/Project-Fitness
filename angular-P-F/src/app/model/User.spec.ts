@@ -6,18 +6,17 @@ describe('User', ()=> {
     })
 })
 it('should accept values',() => {
-   // let U = new User('','',0,0,0);
-   let m = new User (
-        "kgsmith",
-        "adfa",
-         22,
-        55,
-         180,)
+       const m = new User(
+       this.username= "kgsmith",
+        this.pass="adfa",
+         this.ages=22,
+        this.heights=55,
+         this.weights=180,)
     
-    expect(m.username).toEqual("kgsmith");
-    expect(m.pass).toEqual("adfa");
-    expect(m.ages).toEqual(22);
-    expect(m.height).toEqual(55);
-    expect(m.weight).toEqual(180);
+    expect(m.this.username).toEqual("kgsmith");
+    expect(m.this.pass).toEqual("adfa");
+    expect(m.this.ages).toEqual(22);
+    expect(m.this.heights).toEqual(55);
+    expect(m.this.weights).toEqual(180);
     
 })
