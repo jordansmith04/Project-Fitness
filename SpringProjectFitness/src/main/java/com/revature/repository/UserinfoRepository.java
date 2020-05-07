@@ -9,7 +9,7 @@ import com.revature.models.Userinfo;
 @Repository("userinfoRepository")
 public interface UserinfoRepository extends JpaRepository<Userinfo, String>{
 
-	
 	Userinfo findByUsername(String username);
-	<S extends Userinfo> S save(S Userinfo);
+	<S extends Userinfo> S save(Userinfo S);
+	
 }
