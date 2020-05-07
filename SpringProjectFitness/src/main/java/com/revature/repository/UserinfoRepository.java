@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 import com.revature.models.Userinfo;
 
 @Repository("userinfoRepository")
-public interface UserinfoRepository extends JpaRepository<Userinfo, Integer>{
+public interface UserinfoRepository extends JpaRepository<Userinfo, String>{
 
 	
 	Userinfo findByUsername(String username);
-	<S extends Userinfo> S save(Userinfo p);
+	<S extends Userinfo> S save(S Userinfo);
 }
