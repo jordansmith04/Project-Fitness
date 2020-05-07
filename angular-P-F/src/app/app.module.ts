@@ -21,8 +21,7 @@ import { ProfileComponent } from './components/profile/profile.component';
   declarations: [
     AppComponent,
     routingComponents,
-    WorkoutsComponent,
-    ProfileComponent
+    WorkoutsComponent
     
   ],
   imports: [
