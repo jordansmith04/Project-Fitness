@@ -22,4 +22,11 @@ describe('RegisterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  /*it('should initialise HTML', function(){
+    const form = document.createElement('form');
+    const input = document.createElement('input');
+  
+    
+
+  });*/
 });
