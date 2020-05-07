@@ -13,7 +13,7 @@ export class RegisterService {
   url = 'http://localhost:8080/user/NewUser';
 
   constructor(private http: HttpClient) { 
-
+    
   }
 
   insertUser(user: User){
@@ -31,3 +31,4 @@ export class RegisterService {
   }
 
 }
+

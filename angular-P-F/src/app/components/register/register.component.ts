@@ -9,6 +9,7 @@ import {RegisterService} from '../../services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
+
   userModel = new User("carlo", "asdf", 22, 70, 195);
 
   onSubmit(value: any) {
