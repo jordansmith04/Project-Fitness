@@ -11,8 +11,9 @@ export class LoginComponent implements OnInit {
   users: User[] = [];
   constructor(private userSerivce: UserService) { }
 
-  onSubmit(){
-    this.userSerivce.getUser()
+  onSubmit(username){
+    console.log(username)
+    this.userSerivce.getUser(username)
     .subscribe(
       (data) => {
       console.log("success", data),
@@ -23,7 +24,14 @@ export class LoginComponent implements OnInit {
     )
   }
 
+  username ='';
+  loginData: any[]=[];
   ngOnInit() {
    
+  }
+
+  getLogin(username){
+    console.log(username)
+    this.loginData.push(username)
   }
 }

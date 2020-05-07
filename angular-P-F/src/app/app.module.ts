@@ -14,6 +14,7 @@ import { BackShoulderComponent } from './components/back-shoulder/back-shoulder.
 import { AbsComponent } from './components/abs/abs.component';
 import { StretchComponent } from './components/stretch/stretch.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -28,7 +29,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
     
   ],
   providers: [HttpClient],

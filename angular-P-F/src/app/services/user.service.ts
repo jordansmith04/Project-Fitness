@@ -10,8 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<User[]>{
+  getUser(username): Observable<User[]>{
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    return this.http.get<User[]>("http://localhost:8080/user/admin", {headers: headers}) as Observable<User[]>;
+    return this.http.get<User[]>("http://localhost:8080/user/" + username, {headers: headers}) as Observable<User[]>;
   }
 }
