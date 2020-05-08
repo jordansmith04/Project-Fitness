@@ -8,7 +8,7 @@ import { User } from 'src/app/model/User';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  users: User[] = [];
+  users: User;
   constructor(private userService: UserService) { }
 
   onSubmit(username){
