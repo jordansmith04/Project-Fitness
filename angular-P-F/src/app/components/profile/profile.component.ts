@@ -10,9 +10,10 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
+
  users: User[] = [];
 
- 
+
  loginUsername: any[]=[];
   constructor(private userService :UserService) { }
 
