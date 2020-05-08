@@ -18,7 +18,7 @@ public class ExercisesService {
 		return this.exercisesRepository.findById(id);
 	};
 	
-	public <S extends Exercises> S save(Exercises p) {
+	public <S extends Exercises> S insertExercise(Exercises p) {
 		return this.exercisesRepository.save(p);
 	};
 	
