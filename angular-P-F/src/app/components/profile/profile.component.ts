@@ -10,15 +10,34 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
-  @Input() post: User;
+ users: User[];
 
-  users: User[] = [];
-
+ 
+ loginUsername: any[]=[];
   constructor(private userService :UserService) { }
 
   ngOnInit() {
-   this.userService.getUser("admin")
-   .subscribe(data => this.users = data)
+    this.userService.loginUsername
+    .subscribe(
+     (username) =>{
+       console.log(username);
+       this.loginUsername.push(username);
+       this.userService.getUser('carlo')
+    .subscribe(
+      (data) => {
+      console.log("success", data),
+      this.users = data;
+      console.log(this.users)
+     },  (error) => {
+       console.error("error", error)
+     }
+    )
+     },
+     () => {
+       console.log("There was an error grabbing your jokes!");
+     }
+ 
+    )
   
   }
   
