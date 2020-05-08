@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { StretchComponent } from './stretch.component';
+import { element, By, by, browser } from 'protractor';
+import { StretchComponent} from './stretch.component';
 
 describe('StretchComponent', () => {
   let component: StretchComponent;
+  let element: HTMLElement;
   let fixture: ComponentFixture<StretchComponent>;
 
   beforeEach(async(() => {
@@ -22,4 +23,10 @@ describe('StretchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it ('Should not display the modal unless the button is clicked',() =>{
+    expect(element.innerText).toContain("example");
+  
+  ///expect(component.showModal).toBeFalsy("Show modal should be initially false");
+  });
+  
 });

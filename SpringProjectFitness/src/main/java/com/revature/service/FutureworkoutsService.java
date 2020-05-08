@@ -14,7 +14,7 @@ public class FutureworkoutsService {
 	@Autowired
 	private FutureworkoutsRepository futureworkoutsRepository;
 	
-	public <S extends Futureworkouts> S save(Futureworkouts p) {
+	public <S extends Futureworkouts> S insertFuture(Futureworkouts p) {
 		return this.futureworkoutsRepository.save(p);
 	};
 	

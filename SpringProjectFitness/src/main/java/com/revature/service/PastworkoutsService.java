@@ -14,12 +14,11 @@ public class PastworkoutsService {
 	@Autowired
 	private PastworkoutsRepository pastworkoutsRepository;
 
-
-	public <S extends Pastworkouts> S save(Pastworkouts p) {
+	public <S extends Pastworkouts> S insertPastworkout(Pastworkouts p) {
 		return this.pastworkoutsRepository.save(p);	
 	};
 	
-	public List<Pastworkouts> findAllByUsername(String username){
-		return this.findAllByUsername(username);
+	public List<Pastworkouts> getPastworkouts(String username){
+		return this.pastworkoutsRepository.findAllByUsername(username);
 	};
 }
