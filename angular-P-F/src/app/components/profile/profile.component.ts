@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
- users: User[];
+ users: User[] = [];
 
  
  loginUsername: any[]=[];
@@ -25,12 +25,12 @@ export class ProfileComponent implements OnInit {
        this.userService.getUser(username)
     .subscribe(
       (data) => {
-      console.log("success", data),
-      this.users = data;
-      console.log(this.users)
-     },  (error) => {
+      console.log(JSON.stringify(data)),
+      console.log(this.users),
+      (error) => {
        console.error("error", error)
      }
+      }
     )
      },
      () => {

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../model/User';
 import { Observable, Subject } from 'rxjs';
 import { FutureWorkouts } from '../model/FutureWorkouts';
+import { PastWorkouts } from '../model/PastWorkouts';
 import { JsonPipe } from '@angular/common';
 
 @Injectable({
@@ -37,6 +38,39 @@ export class UserService {
     // let body = new HttpParams().append(json);
 
     return this.http.post('http://localhost:8080/future/NewFuture', json, {headers: headers})
+    .subscribe(
+      (res) => { //don't forget to subscribe to your observable!
+      console.log("Request was successful.", res);
+    },
+      (error) => {
+        console.log("Request was not successful!", error);
+      });
+  }
+
+  getFutureWorkouts(): Observable<FutureWorkouts[]>{
+    let headers = new HttpHeaders({'Content-Type':  'application/json',
+    'Access-Control-Allow-Credentials' : 'true',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'});
+    return this.http.get<FutureWorkouts[]>("http://localhost:8080/future/username/admin", {headers: headers}) as Observable<FutureWorkouts[]>;
+  }
+  getPastWorkouts(): Observable<PastWorkouts[]>{
+    let headers = new HttpHeaders({'Content-Type':  'application/json',
+    'Access-Control-Allow-Credentials' : 'true',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'});
+    return this.http.get<PastWorkouts[]>("http://localhost:8080/past/username/admin", {headers: headers}) as Observable<PastWorkouts[]>;
+  }
+
+  insertPastWorkout(workoutP: PastWorkouts){
+    let array = {'username': workoutP.getUsername(), 'exercise': workoutP.getExercise().toString(), 'reps': workoutP.getReps()};
+    let json = JSON.stringify(array);
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    // let body = new HttpParams().append(json);
+
+    return this.http.post('http://localhost:8080/past/NewPast', json, {headers: headers})
     .subscribe(
       (res) => { //don't forget to subscribe to your observable!
       console.log("Request was successful.", res);
