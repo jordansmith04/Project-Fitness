@@ -10,6 +10,7 @@ import { FutureWorkouts } from 'src/app/model/FutureWorkouts';
 export class ChestArmsComponent implements OnInit {
 
   generatedWork = new FutureWorkouts("admin", "pushups", 10)
+  
   constructor(private chestArmService: UserService) { }
 
   ngOnInit(): void {
