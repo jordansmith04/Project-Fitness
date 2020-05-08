@@ -13,13 +13,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(username): Observable<User[]>{
+  getUser(username): Observable<User>{
     let headers = new HttpHeaders({'Content-Type':  'application/json',
     'Access-Control-Allow-Credentials' : 'true',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With'});
-    return this.http.get<User[]>("http://localhost:8080/user/" + username, {headers: headers}) as Observable<User[]>;
+    return this.http.get<User[]>("http://localhost:8080/user/" + username, { headers: headers }) as unknown as Observable<User>;
   }
 
   private loginUsernameSource = new Subject<string>();
