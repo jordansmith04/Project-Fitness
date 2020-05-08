@@ -9,7 +9,7 @@ import { FutureWorkouts } from 'src/app/model/FutureWorkouts';
 })
 export class ChestArmsComponent implements OnInit {
 
-  generatedWork = new FutureWorkouts('carlo', 'pushups', 10)
+  generatedWork = new FutureWorkouts("carlo", "pushups", 10)
   constructor(private chestArmService: UserService) { }
 
   ngOnInit(): void {

@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../model/User';
 import { Observable, Subject } from 'rxjs';
 import { FutureWorkouts } from '../model/FutureWorkouts';
+import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -29,15 +30,17 @@ export class UserService {
 
   insertFutureWorkout(workout: FutureWorkouts){
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    let body = new HttpParams().set('username', workout.getUsername().toString()).set('exercise', workout.getExercise()).set('reps', workout.getReps().toString());
+   
 
+    let body = new HttpParams().append('username', workout.getUsername().toString()).append('exercise', workout.getExercise()).append('reps', workout.getReps().toString());
+    
     return this.http.post('http://localhost:8080/future/NewFuture', body, {headers: headers})
     .subscribe(
-      () => { //don't forget to subscribe to your observable!
-      console.log("Request was successful.");
+      (res) => { //don't forget to subscribe to your observable!
+      console.log("Request was successful.", res);
     },
-      () => {
-        console.log("Request was not successful!");
+      (error) => {
+        console.log("Request was not successful!", error);
       });
   }
   }
