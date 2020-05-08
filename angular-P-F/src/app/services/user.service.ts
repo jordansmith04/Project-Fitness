@@ -27,11 +27,15 @@ export class UserService {
     this.loginUsernameSource.next(message);
   }
 
-  insertFutureWorkout(workout: FutureWorkouts){
-    let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    let body = new HttpParams().set('username', workout.getUsername().toString()).set('exercise', workout.getExercise()).set('reps', workout.getReps().toString());
+  
 
-    return this.http.post('http://localhost:8080/future/NewFuture', body, {headers: headers})
+  insertFutureWorkout(workout: FutureWorkouts){
+    let array = {'username': workout.getUsername(), 'exercise': workout.getExercise().toString(), 'reps': workout.getReps()};
+    let json = JSON.stringify(array);
+    let headers = new HttpHeaders().set('Content-Type', 'application/json');
+    // let body = new HttpParams().append(json);
+
+    return this.http.post('http://localhost:8080/future/NewFuture', json, {headers: headers})
     .subscribe(
       () => { //don't forget to subscribe to your observable!
       console.log("Request was successful.");
