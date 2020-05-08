@@ -18,7 +18,7 @@ export class RegisterService {
 
   insertUser(user: User){
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
-    let body = new HttpParams().set('username', user.getUsername().toString()).set('pass', user.getPass()).set('ages', user.getAge().toString()).set('heights', user.getHeight().toString()).set('weight', user.getWeight().toString());
+    let body = new HttpParams().append('username', user.getUsername().toString()).set('pass', user.getPass()).set('ages', user.getAge().toString()).set('heights', user.getHeight().toString()).set('weight', user.getWeight().toString());
 
     return this.http.post(this.url, body, {headers: headers})
     .subscribe(

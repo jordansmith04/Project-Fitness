@@ -10,7 +10,7 @@ export class ProfileComponent implements OnInit {
 
   @Input() post: User;
 
-  users: User[] = [];
+  users: User[] ;
 
   constructor(private userService :UserService) { }
 
