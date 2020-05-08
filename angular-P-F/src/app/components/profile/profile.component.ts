@@ -10,9 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
- users: User[];
-
- 
+ users: User;
+userna = JSON.parse(this.users.getUsername());
  loginUsername: any[]=[];
   constructor(private userService :UserService) { }
 
@@ -22,7 +21,7 @@ export class ProfileComponent implements OnInit {
      (username) =>{
        console.log(username);
        this.loginUsername.push(username);
-       this.userService.getUser('carlo')
+       this.userService.getUser(username)
     .subscribe(
       (data) => {
       console.log("success", data),
