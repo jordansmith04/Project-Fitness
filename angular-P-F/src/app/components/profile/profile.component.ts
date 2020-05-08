@@ -10,8 +10,10 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
 
- users: User;
-userna = JSON.parse(this.users.getUsername());
+
+ users: User[] = [];
+
+
  loginUsername: any[]=[];
   constructor(private userService :UserService) { }
 
@@ -24,12 +26,12 @@ userna = JSON.parse(this.users.getUsername());
        this.userService.getUser(username)
     .subscribe(
       (data) => {
-      console.log("success", data),
-      this.users = data;
-      console.log(this.users)
-     },  (error) => {
+      console.log(JSON.stringify(data)),
+      console.log(this.users),
+      (error) => {
        console.error("error", error)
      }
+      }
     )
      },
      () => {
